@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vedic Astrologer & Vastu Consultant</title>
+<meta name="description" content="Authentic Vedic astrology, Kundli matching, career guidance and Vastu Shastra consultation. Book on WhatsApp.">
+<meta name="theme-color" content="#090D16">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vedic Astrologer & Vastu Consultant">
+<meta property="og:description" content="Kundli matching, career & finance, Vastu, marriage and gemstone consultation. Book directly on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: {
+        navy: { DEFAULT: '#090D16', 800: '#0E1424', 700: '#151C30' },
+        gold: { DEFAULT: '#D4AF37', light: '#F1D77A', dark: '#A8841C' }
+      },
+      fontFamily: { display: ['Cinzel', 'serif'], body: ['"Plus Jakarta Sans"', 'sans-serif'] }
+    } }
+  };
+</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+  body { background: #090D16; color: #E7E5EF; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+  .glass { background: rgba(255,255,255,.045); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(212,175,55,.2); }
+  .glass-strong { background: rgba(9,13,22,.78); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+  .gold-text { background: linear-gradient(90deg,#F1D77A,#D4AF37 50%,#B8902A); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .btn-gold { background: linear-gradient(135deg,#F1D77A,#D4AF37 55%,#A8841C); color: #1a1405; font-weight: 700; transition: transform .2s, filter .2s; }
+  .btn-gold:hover { transform: translateY(-2px); filter: brightness(1.08); }
+  .btn-gold:active { transform: translateY(0) scale(.98); }
+  .glow { animation: glowPulse 2.6s ease-in-out infinite; }
+  @keyframes glowPulse { 0%,100% { box-shadow: 0 0 10px rgba(212,175,55,.35); } 50% { box-shadow: 0 0 26px rgba(212,175,55,.75); } }
+  .btn-outline { border: 1px solid rgba(212,175,55,.6); color: #F1D77A; transition: background .2s, transform .2s; }
+  .btn-outline:hover { background: rgba(212,175,55,.12); transform: translateY(-2px); }
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  .card-hover { transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+  .card-hover:hover { transform: translateY(-6px); border-color: rgba(212,175,55,.55); box-shadow: 0 14px 40px rgba(212,175,55,.12); }
+
+  /* Hero celestial background */
+  .hero-bg { background: radial-gradient(ellipse at 50% 0%, #17203a 0%, #090D16 60%); }
+  .star { position: absolute; border-radius: 50%; background: #fff; opacity: .15; animation: twinkle var(--d,4s) ease-in-out infinite; animation-delay: var(--dl,0s); }
+  @keyframes twinkle { 0%,100% { opacity: .1; transform: scale(.8); } 50% { opacity: .95; transform: scale(1.25); } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .spin-slow { animation: spin 120s linear infinite; transform-origin: 50% 50%; }
+  .spin-rev  { animation: spin 80s linear infinite reverse; transform-origin: 50% 50%; }
+  .ring-spin { animation: spin 40s linear infinite; }
+  .wheel-wrap { position: absolute; left: 50%; top: 50%; width: min(150vw, 1000px); aspect-ratio: 1; transform: translate(-50%,-50%); opacity: .5; pointer-events: none; }
+  .wheel-wrap svg { width: 100%; height: 100%; }
+
+  /* Form */
+  .field { width: 100%; background: rgba(255,255,255,.05); border: 1px solid rgba(212,175,55,.25); border-radius: .75rem; padding: .8rem 1rem; color: #fff; font-size: 16px; outline: none; transition: border-color .2s, box-shadow .2s; }
+  .field:focus { border-color: #D4AF37; box-shadow: 0 0 0 3px rgba(212,175,55,.18); }
+  .field.invalid { border-color: #f87171; }
+  .field:disabled { opacity: .45; }
+  select.field option { background: #0E1424; color: #fff; }
+  input[type="date"].field, input[type="time"].field { color-scheme: dark; min-height: 3rem; }
+  .err { color: #fca5a5; font-size: .75rem; margin-top: .25rem; min-height: 0; }
+
+  /* Zodiac buttons */
+  .zbtn { transition: all .25s ease; }
+  .zbtn.active { background: linear-gradient(135deg, rgba(241,215,122,.25), rgba(212,175,55,.12)); border-color: #D4AF37; box-shadow: 0 0 20px rgba(212,175,55,.35); transform: translateY(-3px); }
+
+  /* Toasts */
+  #toasts { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 14px); left: 50%; transform: translateX(-50%); z-index: 100; display: flex; flex-direction: column; gap: 10px; width: min(92vw, 420px); pointer-events: none; }
+  .toast { pointer-events: auto; padding: .8rem 1rem; border-radius: .9rem; font-size: .9rem; font-weight: 500; display: flex; gap: .6rem; align-items: flex-start; animation: toastIn .35s ease both; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
+  .toast.out { animation: toastOut .3s ease both; }
+  .toast.success { background: #0f2a22; border: 1px solid #34d399; color: #a7f3d0; }
+  .toast.error { background: #2d1216; border: 1px solid #f87171; color: #fecaca; }
+  .toast.info { background: #131c36; border: 1px solid #D4AF37; color: #F1D77A; }
+  @keyframes toastIn { from { opacity: 0; transform: translateY(-14px) scale(.96); } to { opacity: 1; transform: none; } }
+  @keyframes toastOut { to { opacity: 0; transform: translateY(-10px) scale(.96); } }
+
+  .fab-wa { position: fixed; right: 16px; bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); z-index: 60; animation: waPulse 2.4s infinite; }
+  @keyframes waPulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,.6); } 70% { box-shadow: 0 0 0 18px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+
+  .yt-frame { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 1rem; overflow: hidden; background: #000; }
+  .yt-frame iframe, .yt-frame img { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body class="font-body antialiased">
+
+<div id="toasts" aria-live="polite" aria-atomic="false"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="glass-strong mt-3 rounded-2xl border border-gold/20 px-4 py-2.5 flex items-center justify-between gap-3">
+      <a href="#home" class="flex items-center gap-2.5 min-w-0">
+        <span class="w-9 h-9 shrink-0 rounded-full btn-gold flex items-center justify-center text-lg font-display">ॐ</span>
+        <span id="navBrand" class="font-display font-semibold text-gold-light tracking-wide truncate text-sm sm:text-base"></span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm text-slate-300">
+        <a href="#home" class="hover:text-gold-light transition">Home</a>
+        <a href="#rashifal" class="hover:text-gold-light transition">Rashifal</a>
+        <a href="#services" class="hover:text-gold-light transition">Services</a>
+        <a href="#why" class="hover:text-gold-light transition">Why Us</a>
+        <a href="#reviews" class="hover:text-gold-light transition">Reviews</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="#booking" class="btn-gold glow rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm whitespace-nowrap">Book Consultation</a>
+        <button id="menuBtn" class="lg:hidden w-10 h-10 rounded-full border border-gold/30 text-gold-light flex items-center justify-center" aria-label="Open menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden glass-strong mt-2 rounded-2xl border border-gold/20 p-3 text-slate-200">
+      <a href="#home" class="block px-4 py-3 rounded-xl hover:bg-white/5">Home</a>
+      <a href="#rashifal" class="block px-4 py-3 rounded-xl hover:bg-white/5">Daily Rashifal</a>
+      <a href="#services" class="block px-4 py-3 rounded-xl hover:bg-white/5">Services</a>
+      <a href="#why" class="block px-4 py-3 rounded-xl hover:bg-white/5">Why Consult Us</a>
+      <a href="#reviews" class="block px-4 py-3 rounded-xl hover:bg-white/5">Reviews & Videos</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ===================== HERO ===================== -->
+<section id="home" class="hero-bg relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24 min-h-screen flex items-center">
+  <div id="stars" class="absolute inset-0 pointer-events-none"></div>
+  <div class="wheel-wrap"><div id="wheel" class="w-full h-full"></div></div>
+  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-navy to-transparent pointer-events-none"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <!-- Portrait -->
+    <div class="order-1 lg:order-2 flex justify-center reveal">
+      <div class="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96">
+        <div class="absolute -inset-3 rounded-full border border-dashed border-gold/50 ring-spin"></div>
+        <div class="absolute -inset-8 rounded-full bg-gold/10 blur-3xl"></div>
+        <div class="relative w-full h-full rounded-full p-[5px] bg-gradient-to-br from-gold-light via-gold to-gold-dark shadow-[0_0_50px_rgba(212,175,55,.35)]">
+          <img id="heroPhoto" alt="Portrait of Guruji" class="w-full h-full rounded-full object-cover bg-navy-800" width="400" height="400">
+        </div>
+        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 glass rounded-full px-4 py-1.5 text-xs font-semibold text-gold-light whitespace-nowrap flex items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37"><path d="M12 2l2.4 2.1 3.2-.3 1 3 2.8 1.6-.9 3.1 1.5 2.8-2.4 2.1-.3 3.2-3.1.9L12 22l-2.8-1.7-3.1-.9-.3-3.2L3.4 14l1.5-2.8-.9-3.1L6.8 6.5l1-3 3.2.3L12 2zm-1.3 13.4l5.3-5.3-1.2-1.2-4.1 4.1-1.9-1.9-1.2 1.2 3.1 3.1z"/></svg>
+          Verified Astrologer
+        </div>
+      </div>
+    </div>
+
+    <!-- Text -->
+    <div class="order-2 lg:order-1 text-center lg:text-left reveal">
+      <p class="text-gold/90 text-xs sm:text-sm tracking-[.3em] uppercase mb-3">॥ ॐ &nbsp;Jyotish &middot; Vastu &middot; Dharma ॥</p>
+      <h1 id="heroName" class="font-display font-bold text-4xl sm:text-5xl xl:text-6xl leading-tight gold-text"></h1>
+      <p id="heroTitle" class="mt-3 text-lg sm:text-xl text-slate-200 font-medium"></p>
+      <p id="heroTagline" class="mt-4 text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed"></p>
+
+      <div class="mt-6 inline-flex glass rounded-2xl px-5 py-3 text-sm sm:text-base font-semibold text-gold-light items-center gap-3">
+        <span class="text-xl">🏅</span><span id="heroBadge"></span>
+      </div>
+
+      <ul id="heroHighlights" class="mt-5 flex flex-wrap justify-center lg:justify-start gap-2"></ul>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+        <a id="heroWa" href="#" target="_blank" rel="noopener" class="btn-gold glow rounded-full px-7 py-3.5 flex items-center justify-center gap-2">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.8-1.6-3.9-3.5-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.5l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg>
+          WhatsApp Direct
+        </a>
+        <a href="#services" class="btn-outline rounded-full px-7 py-3.5 text-center font-semibold">View Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RASHIFAL ===================== -->
+<section id="rashifal" class="relative py-16 sm:py-24">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10 reveal">
+      <p class="text-gold text-xs tracking-[.3em] uppercase mb-2">Aaj Ka Rashifal</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold gold-text">Today's Cosmic Guidance</h2>
+      <p id="todayDate" class="mt-3 text-slate-400 text-sm"></p>
+      <p class="mt-1 text-slate-500 text-xs">Tap your Moon sign (Chandra Rashi)</p>
+    </div>
+
+    <div id="zodiacGrid" class="grid grid-cols-4 sm:grid-cols-6 gap-2.5 sm:gap-3 reveal"></div>
+
+    <div id="rashiPanel" class="glass rounded-3xl p-5 sm:p-8 mt-8 reveal" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section id="services" class="relative py-16 sm:py-24 bg-gradient-to-b from-transparent via-navy-800/60 to-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <p class="text-gold text-xs tracking-[.3em] uppercase mb-2">Consultations</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold gold-text">Our Services</h2>
+      <p class="mt-3 text-slate-400 max-w-xl mx-auto">Personal one-to-one sessions on call, video or WhatsApp — based on your exact birth details.</p>
+    </div>
+    <div id="servicesGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"></div>
+  </div>
+</section>
+
+<!-- ===================== BOOKING ===================== -->
+<section id="booking" class="relative py-16 sm:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+    <div class="lg:col-span-2 reveal">
+      <p class="text-gold text-xs tracking-[.3em] uppercase mb-2">Book Now</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold gold-text">Kundli & Appointment Booking</h2>
+      <p class="mt-4 text-slate-400 leading-relaxed">Share your birth details once — they reach Guruji on WhatsApp in a neat, ready-to-read format. You'll get the available slots and payment details there.</p>
+      <ol class="mt-6 space-y-4">
+        <li class="flex gap-4"><span class="w-9 h-9 shrink-0 rounded-full btn-gold flex items-center justify-center text-sm">1</span><p class="text-slate-300 pt-1.5">Fill in your birth details & choose a service</p></li>
+        <li class="flex gap-4"><span class="w-9 h-9 shrink-0 rounded-full btn-gold flex items-center justify-center text-sm">2</span><p class="text-slate-300 pt-1.5">WhatsApp opens with your message pre-written</p></li>
+        <li class="flex gap-4"><span class="w-9 h-9 shrink-0 rounded-full btn-gold flex items-center justify-center text-sm">3</span><p class="text-slate-300 pt-1.5">Confirm slot & receive your consultation</p></li>
+      </ol>
+      <p class="mt-6 text-xs text-slate-500">🔒 Your details are only sent to Guruji's WhatsApp. Nothing is stored on this website.</p>
+    </div>
+
+    <form id="bookingForm" class="lg:col-span-3 glass rounded-3xl p-5 sm:p-8 grid sm:grid-cols-2 gap-4 reveal" novalidate>
+      <div class="sm:col-span-2">
+        <label for="f-name" class="block text-sm text-slate-300 mb-1.5">Full Name *</label>
+        <input id="f-name" class="field" type="text" autocomplete="name" placeholder="e.g. Rohit Sharma">
+        <p class="err" data-err="f-name"></p>
+      </div>
+      <div>
+        <label for="f-gender" class="block text-sm text-slate-300 mb-1.5">Gender *</label>
+        <select id="f-gender" class="field">
+          <option value="">Select…</option>
+          <option value="Male|पुरुष">Male / पुरुष</option>
+          <option value="Female|महिला">Female / महिला</option>
+          <option value="Other|अन्य">Other / अन्य</option>
+        </select>
+        <p class="err" data-err="f-gender"></p>
+      </div>
+      <div>
+        <label for="f-service" class="block text-sm text-slate-300 mb-1.5">Consultation Type *</label>
+        <select id="f-service" class="field"></select>
+        <p class="err" data-err="f-service"></p>
+      </div>
+      <div>
+        <label for="f-dob" class="block text-sm text-slate-300 mb-1.5">Date of Birth *</label>
+        <input id="f-dob" class="field" type="date" min="1900-01-01">
+        <p class="err" data-err="f-dob"></p>
+      </div>
+      <div>
+        <label for="f-tob" class="block text-sm text-slate-300 mb-1.5">Exact Time of Birth *</label>
+        <input id="f-tob" class="field" type="time">
+        <label class="mt-2 flex items-center gap-2 text-xs text-slate-400 cursor-pointer select-none">
+          <input id="f-tob-unknown" type="checkbox" class="accent-yellow-500 w-4 h-4"> I don't know my exact birth time
+        </label>
+        <p class="err" data-err="f-tob"></p>
+      </div>
+      <div class="sm:col-span-2">
+        <label for="f-place" class="block text-sm text-slate-300 mb-1.5">Birth City / State *</label>
+        <input id="f-place" class="field" type="text" autocomplete="off" placeholder="e.g. Jaipur, Rajasthan">
+        <p class="err" data-err="f-place"></p>
+      </div>
+      <div class="sm:col-span-2">
+        <label for="f-query" class="block text-sm text-slate-300 mb-1.5">Your Query <span class="text-slate-500">(optional)</span></label>
+        <textarea id="f-query" rows="3" class="field resize-none" placeholder="Briefly describe your question or concern…"></textarea>
+      </div>
+      <button type="submit" class="sm:col-span-2 btn-gold glow rounded-full py-4 text-base flex items-center justify-center gap-2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.8-1.6-3.9-3.5-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.5l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg>
+        Send Details on WhatsApp
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== WHY US ===================== -->
+<section id="why" class="relative py-16 sm:py-24 bg-gradient-to-b from-transparent via-navy-800/60 to-transparent">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <p class="text-gold text-xs tracking-[.3em] uppercase mb-2">Trust & Authenticity</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold gold-text">Why Consult Us</h2>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-5 sm:gap-6">
+      <div class="glass card-hover rounded-3xl p-7 text-center reveal">
+        <div class="w-16 h-16 mx-auto rounded-full bg-gold/10 border border-gold/40 flex items-center justify-center text-3xl">🔒</div>
+        <h3 class="font-display text-xl text-gold-light mt-5">100% Privacy Guaranteed</h3>
+        <p class="text-slate-400 text-sm mt-2 leading-relaxed">Your birth details and personal concerns stay strictly between you and Guruji. Always.</p>
+      </div>
+      <div class="glass card-hover rounded-3xl p-7 text-center reveal">
+        <div class="w-16 h-16 mx-auto rounded-full bg-gold/10 border border-gold/40 flex items-center justify-center text-3xl">🔭</div>
+        <h3 class="font-display text-xl text-gold-light mt-5">Accurate Vedic Calculations</h3>
+        <p class="text-slate-400 text-sm mt-2 leading-relaxed">Lahiri ayanamsha, precise Dasha & Gochar analysis, cross-checked by hand — not just software.</p>
+      </div>
+      <div class="glass card-hover rounded-3xl p-7 text-center reveal">
+        <div class="w-16 h-16 mx-auto rounded-full bg-gold/10 border border-gold/40 flex items-center justify-center text-3xl">🪔</div>
+        <h3 class="font-display text-xl text-gold-light mt-5">Practical Remedies</h3>
+        <p class="text-slate-400 text-sm mt-2 leading-relaxed">Simple, affordable and doable remedies — no fear tactics, no unnecessary expensive rituals.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 glass rounded-3xl p-6 sm:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center reveal">
+      <div><p class="font-display text-3xl sm:text-4xl gold-text"><span data-count id="stYears">0</span>+</p><p class="text-xs sm:text-sm text-slate-400 mt-1">Years of Experience</p></div>
+      <div><p class="font-display text-3xl sm:text-4xl gold-text"><span data-count id="stKundli">0</span>+</p><p class="text-xs sm:text-sm text-slate-400 mt-1">Kundlis Analyzed</p></div>
+      <div><p class="font-display text-3xl sm:text-4xl gold-text"><span data-count data-val="98">0</span>%</p><p class="text-xs sm:text-sm text-slate-400 mt-1">Client Satisfaction</p></div>
+      <div><p class="font-display text-3xl sm:text-4xl gold-text"><span data-count data-val="12">0</span>+</p><p class="text-xs sm:text-sm text-slate-400 mt-1">Countries Served</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS & VIDEOS ===================== -->
+<section id="reviews" class="relative py-16 sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <p class="text-gold text-xs tracking-[.3em] uppercase mb-2">Blessings & Insights</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold gold-text">Client Experiences</h2>
+    </div>
+    <div id="reviewGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"></div>
+
+    <div id="videoSection" class="mt-16">
+      <div class="text-center mb-8 reveal">
+        <h3 class="font-display text-2xl sm:text-3xl text-gold-light">Video Insights</h3>
+        <p class="text-slate-400 text-sm mt-2">Watch Guruji explain Vedic wisdom in simple language</p>
+      </div>
+      <div class="max-w-4xl mx-auto reveal">
+        <div id="videoMain" class="yt-frame glass"></div>
+        <p id="videoTitle" class="mt-3 text-center text-slate-300 font-medium"></p>
+        <div id="videoList" class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="border-t border-gold/20 bg-navy-800/70 pt-12 pb-24 sm:pb-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-10">
+    <div>
+      <div class="flex items-center gap-2.5">
+        <span class="w-10 h-10 rounded-full btn-gold flex items-center justify-center text-xl font-display">ॐ</span>
+        <span id="footName" class="font-display text-lg text-gold-light"></span>
+      </div>
+      <p id="footTitle" class="mt-3 text-slate-400 text-sm"></p>
+      <div id="footSocial" class="mt-4 flex gap-3"></div>
+    </div>
+    <div>
+      <h4 class="font-display text-gold-light mb-3">Quick Links</h4>
+      <ul class="space-y-2 text-sm text-slate-400">
+        <li><a class="hover:text-gold-light" href="#rashifal">Daily Rashifal</a></li>
+        <li><a class="hover:text-gold-light" href="#services">Services</a></li>
+        <li><a class="hover:text-gold-light" href="#booking">Book Consultation</a></li>
+        <li><a class="hover:text-gold-light" href="#reviews">Reviews & Videos</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display text-gold-light mb-3">Contact</h4>
+      <ul class="space-y-2 text-sm text-slate-400">
+        <li>📍 <span id="footLoc"></span></li>
+        <li>💬 <a id="footWa" class="hover:text-gold-light" target="_blank" rel="noopener" href="#"></a></li>
+        <li>✉️ <a id="footMail" class="hover:text-gold-light" href="#"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 pt-6 border-t border-white/5 text-xs text-slate-500 text-center leading-relaxed">
+    <p>Astrology is a traditional guidance system and is not a substitute for medical, legal or financial advice. Results vary for every individual.</p>
+    <p class="mt-2">&copy; <span id="year"></span> <span id="footName2"></span>. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a id="fabWa" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+   class="fab-wa w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-xl hover:scale-110 transition">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.8-1.6-3.9-3.5-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.5l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg>
+</a>
+
+<script src="config.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- helpers ---------- */
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function inr(n) { return "₹" + Number(n || 0).toLocaleString("en-IN"); }
+  function ytId(v) {
+    v = String(v || "").trim();
+    var m = v.match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([A-Za-z0-9_-]{11})/);
+    if (m) return m[1];
+    return /^[A-Za-z0-9_-]{11}$/.test(v) ? v : "";
+  }
+
+  /* ---------- toast ---------- */
+  function toast(msg, type) {
+    type = type || "info";
+    var box = $("#toasts");
+    var el = document.createElement("div");
+    el.className = "toast " + type;
+    var icon = type === "success" ? "✓" : type === "error" ? "!" : "✦";
+    el.innerHTML = '<span class="font-bold">' + icon + '</span><span>' + esc(msg) + '</span>';
+    box.appendChild(el);
+    setTimeout(function () {
+      el.classList.add("out");
+      setTimeout(function () { el.remove(); }, 320);
+    }, 3800);
+  }
+
+  /* ---------- data ---------- */
+  var DATA = SiteStore.load();
+
+  function waNumber(raw) {
+    var n = String(raw || "").replace(/\D/g, "").replace(/^0+/, "");
+    if (n.length === 10) n = "91" + n;
+    return n;
+  }
+  function waLink(text) {
+    return "https://wa.me/" + waNumber(DATA.guruji.whatsapp) + (text ? "?text=" + encodeURIComponent(text) : "");
+  }
+
+  /* ---------- scroll reveal ---------- */
+  var revealIO = ("IntersectionObserver" in window) ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); revealIO.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }) : null;
+
+  function observeReveals() {
+    $$(".reveal:not(.in)").forEach(function (el) {
+      if (revealIO) revealIO.observe(el); else el.classList.add("in");
+    });
+  }
+
+  /* ---------- count-up ---------- */
+  var countIO = ("IntersectionObserver" in window) ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      countIO.unobserve(e.target);
+      runCount(e.target);
+    });
+  }, { threshold: 0.5 }) : null;
+
+  function runCount(el) {
+    var target = Number(el.dataset.val || 0);
+    var start = performance.now(), dur = 1600;
+    function step(t) {
+      var p = Math.min(1, (t - start) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString("en-IN");
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  function observeCounts() {
+    $$("[data-count]").forEach(function (el) {
+      el.textContent = "0";
+      if (countIO) countIO.observe(el); else el.textContent = Number(el.dataset.val || 0).toLocaleString("en-IN");
+    });
+  }
+
+  /* ---------- hero decorations ---------- */
+  function buildStars() {
+    var box = $("#stars"), html = "";
+    for (var i = 0; i < 90; i++) {
+      var s = (Math.random() * 2 + 1).toFixed(1);
+      html += '<span class="star" style="left:' + (Math.random() * 100).toFixed(2) + '%;top:' + (Math.random() * 100).toFixed(2) +
+        '%;width:' + s + 'px;height:' + s + 'px;--d:' + (3 + Math.random() * 5).toFixed(1) + 's;--dl:-' + (Math.random() * 6).toFixed(1) + 's"></span>';
+    }
+    box.innerHTML = html;
+  }
+
+  var GLYPHS = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
+
+  function buildWheel() {
+    var c = 300, out = '<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#D4AF37">';
+    out += '<g class="spin-slow">';
+    out += '<circle cx="300" cy="300" r="292" stroke-opacity=".5" stroke-width="1.5"/>';
+    out += '<circle cx="300" cy="300" r="238" stroke-opacity=".5"/>';
+    for (var i = 0; i < 12; i++) {
+      var a = (i * 30) * Math.PI / 180;
+      var x1 = c + 238 * Math.sin(a), y1 = c - 238 * Math.cos(a);
+      var x2 = c + 292 * Math.sin(a), y2 = c - 292 * Math.cos(a);
+      out += '<line x1="' + x1.toFixed(1) + '" y1="' + y1.toFixed(1) + '" x2="' + x2.toFixed(1) + '" y2="' + y2.toFixed(1) + '" stroke-opacity=".45"/>';
+      var am = ((i * 30) + 15) * Math.PI / 180;
+      var tx = c + 265 * Math.sin(am), ty = c - 265 * Math.cos(am);
+      out += '<text x="' + tx.toFixed(1) + '" y="' + (ty + 9).toFixed(1) + '" text-anchor="middle" font-size="26" fill="#D4AF37" stroke="none" fill-opacity=".9">' + GLYPHS[i] + '︎</text>';
+    }
+    out += '</g><g class="spin-rev">';
+    out += '<circle cx="300" cy="300" r="200" stroke-opacity=".35" stroke-dasharray="3 9"/>';
+    out += '<circle cx="300" cy="300" r="150" stroke-opacity=".3"/>';
+    out += '<polygon points="300,120 456,390 144,390" stroke-opacity=".3"/>';
+    out += '<polygon points="300,480 144,210 456,210" stroke-opacity=".3"/>';
+    for (var k = 0; k < 24; k++) {
+      var b = (k * 15) * Math.PI / 180;
+      out += '<circle cx="' + (c + 200 * Math.sin(b)).toFixed(1) + '" cy="' + (c - 200 * Math.cos(b)).toFixed(1) + '" r="2.4" fill="#D4AF37" stroke="none" fill-opacity=".6"/>';
+    }
+    out += '</g></svg>';
+    $("#wheel").innerHTML = out;
+  }
+
+  /* ---------- renderers ---------- */
+  function renderProfile() {
+    var g = DATA.guruji;
+    document.title = g.name + " | " + g.title;
+    $("#navBrand").textContent = g.name;
+    $("#heroName").textContent = g.name;
+    $("#heroTitle").textContent = g.title;
+    $("#heroTagline").textContent = g.tagline;
+    $("#heroBadge").textContent = g.experienceYears + "+ Years Vedic Expertise | " + Number(g.kundlisAnalyzed || 0).toLocaleString("en-IN") + "+ Kundlis Analyzed";
+    var img = $("#heroPhoto");
+    img.onerror = function () { img.onerror = null; img.src = SiteStore.avatar; };
+    img.src = g.photo ? g.photo : SiteStore.avatar;
+    img.alt = "Portrait of " + g.name;
+
+    $("#heroHighlights").innerHTML = (g.highlights || []).map(function (h) {
+      return '<li class="glass rounded-full px-3.5 py-1.5 text-xs sm:text-sm text-slate-200 flex items-center gap-1.5"><span class="text-gold">✦</span>' + esc(h) + '</li>';
+    }).join("");
+
+    var generic = "नमस्ते गुरुजी 🙏 / Namaste Guruji, I would like to know more about your consultation.";
+    ["#heroWa", "#fabWa"].forEach(function (s) { $(s).href = waLink(generic); });
+
+    $("#stYears").dataset.val = g.experienceYears || 0;
+    $("#stKundli").dataset.val = g.kundlisAnalyzed || 0;
+
+    $("#footName").textContent = g.name;
+    $("#footName2").textContent = g.name;
+    $("#footTitle").textContent = g.title;
+    $("#footLoc").textContent = g.location || "India";
+    var fw = $("#footWa");
+    fw.href = waLink(generic);
+    fw.textContent = "+" + waNumber(g.whatsapp);
+    var fm = $("#footMail");
+    fm.href = g.email ? "mailto:" + g.email : "#";
+    fm.textContent = g.email || "—";
+
+    var soc = "";
+    function sbtn(url, label) {
+      return '<a href="' + esc(url) + '" target="_blank" rel="noopener" class="px-3.5 py-1.5 rounded-full glass text-xs text-gold-light hover:bg-gold/10 transition">' + label + '</a>';
+    }
+    if (g.instagram) soc += sbtn(g.instagram, "Instagram");
+    if (g.youtube) soc += sbtn(g.youtube, "YouTube");
+    $("#footSocial").innerHTML = soc;
+  }
+
+  function renderServices() {
+    var list = DATA.services || [];
+    $("#servicesGrid").innerHTML = list.length ? list.map(function (s) {
+      var pts = (s.points || []).map(function (p) {
+        return '<li class="flex gap-2.5 text-sm text-slate-300"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span>' + esc(p) + '</span></li>';
+      }).join("");
+      return '<article class="glass card-hover rounded-3xl p-6 flex flex-col relative reveal">' +
+        (s.popular ? '<span class="absolute -top-3 right-5 btn-gold text-[11px] px-3 py-1 rounded-full tracking-wide">MOST POPULAR</span>' : '') +
+        '<div class="flex items-start justify-between gap-3">' +
+          '<div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-3xl">' + esc(s.icon || "✨") + '</div>' +
+          '<span class="text-xs text-slate-300 glass rounded-full px-3 py-1 flex items-center gap-1.5">⏱ ' + esc(s.duration) + '</span>' +
+        '</div>' +
+        '<h3 class="font-display text-xl text-gold-light mt-4 leading-snug">' + esc(s.name) + '</h3>' +
+        '<p class="mt-2 text-3xl font-bold text-white">' + inr(s.price) + '<span class="text-xs font-normal text-slate-400"> / session</span></p>' +
+        '<ul class="mt-4 space-y-2.5 flex-1">' + pts + '</ul>' +
+        '<button type="button" data-book="' + esc(s.id) + '" class="btn-gold rounded-full py-3 mt-6 text-sm">Book This Service</button>' +
+      '</article>';
+    }).join("") : '<p class="text-center text-slate-400 sm:col-span-2 lg:col-span-3">Services will be available soon.</p>';
+
+    var sel = $("#f-service");
+    var prev = sel.value;
+    sel.innerHTML = '<option value="">Select service…</option>' + list.map(function (s) {
+      return '<option value="' + esc(s.id) + '">' + esc(s.name) + " — " + inr(s.price) + '</option>';
+    }).join("") + '<option value="__general">General Query / Not sure</option>';
+    if (prev && $$("option", sel).some(function (o) { return o.value === prev; })) sel.value = prev;
+  }
+
+  function stars(n) {
+    n = Math.max(0, Math.min(5, Number(n) || 0));
+    return '<span class="text-gold tracking-widest" aria-label="' + n + ' out of 5 stars">' + "★".repeat(n) + '<span class="text-slate-600">' + "★".repeat(5 - n) + '</span></span>';
+  }
+
+  function renderReviews() {
+    var list = DATA.testimonials || [];
+    $("#reviewGrid").innerHTML = list.map(function (t) {
+      var initial = esc((t.name || "?").trim().charAt(0).toUpperCase());
+      return '<figure class="glass card-hover rounded-3xl p-6 reveal flex flex-col">' +
+        '<div class="flex items-center justify-between">' + stars(t.rating) + '<span class="text-4xl leading-none text-gold/30 font-display">“</span></div>' +
+        '<blockquote class="mt-3 text-slate-300 text-sm leading-relaxed flex-1">' + esc(t.text) + '</blockquote>' +
+        '<figcaption class="mt-5 flex items-center gap-3">' +
+          '<span class="w-10 h-10 rounded-full btn-gold flex items-center justify-center font-bold">' + initial + '</span>' +
+          '<span><span class="block text-sm font-semibold text-white">' + esc(t.name) + '</span><span class="block text-xs text-slate-400">' + esc(t.city) + '</span></span>' +
+        '</figcaption></figure>';
+    }).join("");
+  }
+
+  var currentVideo = 0;
+  function renderVideos() {
+    var vids = (DATA.videos || []).map(function (v) { return { id: ytId(v.id), title: v.title || "" }; }).filter(function (v) { return v.id; });
+    $("#videoSection").style.display = vids.length ? "" : "none";
+    if (!vids.length) return;
+    if (currentVideo >= vids.length) currentVideo = 0;
+
+    function showFacade(i) {
+      currentVideo = i;
+      var v = vids[i];
+      $("#videoMain").innerHTML =
+        '<img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="' + esc(v.title) + '" loading="lazy">' +
+        '<button type="button" aria-label="Play video" class="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/20 transition">' +
+        '<span class="w-16 h-16 sm:w-20 sm:h-20 rounded-full btn-gold glow flex items-center justify-center"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button>';
+      $("#videoMain button").addEventListener("click", function () {
+        $("#videoMain").innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + v.id + '?autoplay=1&rel=0" title="' + esc(v.title) + '" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>';
+      });
+      $("#videoTitle").textContent = v.title;
+      $$("#videoList button").forEach(function (b, idx) { b.classList.toggle("ring-2", idx === i); b.classList.toggle("ring-gold", idx === i); });
+    }
+
+    $("#videoList").innerHTML = vids.map(function (v, i) {
+      return '<button type="button" data-i="' + i + '" class="relative rounded-xl overflow-hidden aspect-video group bg-navy-700">' +
+        '<img src="https://i.ytimg.com/vi/' + v.id + '/mqdefault.jpg" alt="" loading="lazy" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">' +
+        '<span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-2 text-[11px] sm:text-xs text-left text-white line-clamp-2">' + esc(v.title) + '</span></button>';
+    }).join("");
+    $$("#videoList button").forEach(function (b) {
+      b.addEventListener("click", function () { showFacade(Number(b.dataset.i)); });
+    });
+    showFacade(currentVideo);
+  }
+
+  function renderAll() {
+    renderProfile();
+    renderServices();
+    renderReviews();
+    renderVideos();
+    observeReveals();
+    observeCounts();
+  }
+
+  /* ---------- Rashifal ---------- */
+  var SIGNS = [
+    { n: "Aries", hi: "मेष", sa: "Mesha", el: "Fire", ru: "Mars", mantra: "ॐ भौमाय नमः" },
+    { n: "Taurus", hi: "वृषभ", sa: "Vrishabha", el: "Earth", ru: "Venus", mantra: "ॐ शुक्राय नमः" },
+    { n: "Gemini", hi: "मिथुन", sa: "Mithuna", el: "Air", ru: "Mercury", mantra: "ॐ बुधाय नमः" },
+    { n: "Cancer", hi: "कर्क", sa: "Karka", el: "Water", ru: "Moon", mantra: "ॐ सोमाय नमः" },
+    { n: "Leo", hi: "सिंह", sa: "Simha", el: "Fire", ru: "Sun", mantra: "ॐ सूर्याय नमः" },
+    { n: "Virgo", hi: "कन्या", sa: "Kanya", el: "Earth", ru: "Mercury", mantra: "ॐ बुधाय नमः" },
+    { n: "Libra", hi: "तुला", sa: "Tula", el: "Air", ru: "Venus", mantra: "ॐ शुक्राय नमः" },
+    { n: "Scorpio", hi: "वृश्चिक", sa: "Vrishchika", el: "Water", ru: "Mars", mantra: "ॐ भौमाय नमः" },
+    { n: "Sagittarius", hi: "धनु", sa: "Dhanu", el: "Fire", ru: "Jupiter", mantra: "ॐ गुरवे नमः" },
+    { n: "Capricorn", hi: "मकर", sa: "Makara", el: "Earth", ru: "Saturn", mantra: "ॐ शनैश्चराय नमः" },
+    { n: "Aquarius", hi: "कुंभ", sa: "Kumbha", el: "Air", ru: "Saturn", mantra: "ॐ शनैश्चराय नमः" },
+    { n: "Pisces", hi: "मीन", sa: "Meena", el: "Water", ru: "Jupiter", mantra: "ॐ गुरवे नमः" }
+  ];
+  var COLORS = [
+    ["Royal Red", "#C0392B"], ["Saffron", "#FF9933"], ["Golden Yellow", "#F1C40F"], ["Emerald Green", "#1ABC9C"],
+    ["Sky Blue", "#3498DB"], ["Pearl White", "#F2F2F2"], ["Royal Purple", "#8E44AD"], ["Rose Pink", "#E91E8C"],
+    ["Deep Maroon", "#800000"], ["Peacock Blue", "#0E7C86"], ["Ivory Cream", "#F5E6C8"], ["Silver Grey", "#B0B7C3"]
+  ];
+  var SLOTS = ["6:30 – 8:00 AM", "9:00 – 10:30 AM", "10:15 – 11:45 AM", "12:30 – 2:00 PM", "4:00 – 5:30 PM", "6:15 – 7:45 PM", "8:00 – 9:30 PM"];
+  var OPEN = [
+    "The planetary alignment today fills your day with fresh energy and optimism.",
+    "A calm and auspicious Moon supports clear thinking and steady progress.",
+    "Cosmic energies favour new beginnings — trust your inner voice today.",
+    "Today's Gochar brings confidence and a welcome sense of direction.",
+    "Positive vibrations surround you; small efforts will bring pleasing results."
+  ];
+  var CAREER = [
+    "Professional efforts are noticed — a senior may offer encouragement or support.",
+    "Good time to finish pending work; recognition for your sincerity is likely.",
+    "New ideas at work find acceptance. Speak up with confidence.",
+    "Collaboration with colleagues brings smooth and rewarding outcomes.",
+    "Opportunities for learning or a useful contact may arise unexpectedly."
+  ];
+  var LOVE = [
+    "Warmth and understanding strengthen your bond with loved ones.",
+    "A sweet conversation with family or your partner lifts the mood at home.",
+    "Harmony in relationships is highlighted; listen with patience and love.",
+    "Old misunderstandings can dissolve with a kind word from you.",
+    "Time spent with close ones will bring joy and emotional peace."
+  ];
+  var MONEY = [
+    "Financial matters look stable; prudent planning will pay off.",
+    "A small gain or savings opportunity may present itself.",
+    "Good day to organise your finances and set a clear goal.",
+    "Wise spending today brings lasting satisfaction and security.",
+    "Support from an unexpected source can ease a money-related concern."
+  ];
+  var CATS = ["Love", "Career", "Health", "Finance"];
+
+  function hashStr(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+  function rng(seed) {
+    var a = seed;
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function dayKey() {
+    var d = new Date();
+    return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+  }
+  function todayReading(i) {
+    var sg = SIGNS[i], r = rng(hashStr(dayKey() + "|" + sg.n));
+    var pick = function (a) { return a[Math.floor(r() * a.length)]; };
+    var color = pick(COLORS);
+    var num = 1 + Math.floor(r() * 9);
+    var num2 = ((num + 3 + Math.floor(r() * 5)) % 9) + 1;
+    return {
+      color: color,
+      numbers: num === num2 ? String(num) : num + " & " + num2,
+      slot: pick(SLOTS),
+      text: pick(OPEN) + " " + pick(CAREER) + " " + pick(LOVE) + " " + pick(MONEY),
+      scores: CATS.map(function () { return 3 + Math.floor(r() * 3); })
+    };
+  }
+
+  function buildZodiacGrid() {
+    $("#zodiacGrid").innerHTML = SIGNS.map(function (s, i) {
+      return '<button type="button" data-z="' + i + '" class="zbtn glass rounded-2xl py-3 px-1 flex flex-col items-center gap-0.5" aria-pressed="false">' +
+        '<span class="text-2xl sm:text-3xl text-gold-light leading-none">' + GLYPHS[i] + '︎</span>' +
+        '<span class="text-[11px] sm:text-xs font-semibold text-white mt-1">' + s.n + '</span>' +
+        '<span class="text-[10px] sm:text-[11px] text-slate-400">' + s.hi + '</span></button>';
+    }).join("");
+    $$("#zodiacGrid .zbtn").forEach(function (b) {
+      b.addEventListener("click", function () { selectSign(Number(b.dataset.z)); });
+    });
+    $("#rashiPanel").innerHTML = '<div class="text-center py-8 text-slate-400"><div class="text-5xl mb-3 text-gold/60">✦</div>Select your Rashi above to reveal today\'s lucky color, number and guidance.</div>';
+  }
+
+  function selectSign(i) {
+    var s = SIGNS[i], t = todayReading(i);
+    $$("#zodiacGrid .zbtn").forEach(function (b) {
+      var on = Number(b.dataset.z) === i;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    var meters = CATS.map(function (c, k) {
+      return '<div class="glass rounded-xl px-3 py-2.5"><p class="text-[11px] text-slate-400">' + c + '</p><p class="text-gold text-sm tracking-widest">' + "★".repeat(t.scores[k]) + '<span class="text-slate-600">' + "★".repeat(5 - t.scores[k]) + '</span></p></div>';
+    }).join("");
+    $("#rashiPanel").innerHTML =
+      '<div class="flex items-center gap-4 mb-6">' +
+        '<div class="w-16 h-16 rounded-2xl btn-gold flex items-center justify-center text-4xl">' + GLYPHS[i] + '︎</div>' +
+        '<div><h3 class="font-display text-2xl text-gold-light">' + s.n + ' · ' + s.hi + '</h3>' +
+        '<p class="text-xs text-slate-400 mt-0.5">' + s.sa + ' &middot; ' + s.el + ' element &middot; Ruled by ' + s.ru + '</p></div>' +
+      '</div>' +
+      '<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">' +
+        '<div class="glass rounded-2xl p-4 flex items-center gap-3"><span class="w-10 h-10 rounded-full border-2 border-white/30 shrink-0" style="background:' + t.color[1] + '"></span><div><p class="text-[11px] uppercase tracking-wider text-slate-400">Lucky Color</p><p class="font-semibold text-white">' + t.color[0] + '</p></div></div>' +
+        '<div class="glass rounded-2xl p-4 flex items-center gap-3"><span class="w-10 h-10 rounded-full btn-gold flex items-center justify-center font-bold shrink-0">#</span><div><p class="text-[11px] uppercase tracking-wider text-slate-400">Lucky Number</p><p class="font-semibold text-white">' + t.numbers + '</p></div></div>' +
+        '<div class="glass rounded-2xl p-4 flex items-center gap-3"><span class="w-10 h-10 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center shrink-0">🕰</span><div><p class="text-[11px] uppercase tracking-wider text-slate-400">Auspicious Time</p><p class="font-semibold text-white">' + t.slot + '</p></div></div>' +
+      '</div>' +
+      '<p class="mt-5 text-slate-200 leading-relaxed">' + esc(t.text) + '</p>' +
+      '<div class="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-3">' + meters + '</div>' +
+      '<p class="mt-5 text-sm text-gold-light">🪔 Chant <span class="font-semibold">' + s.mantra + '</span> 11 times for added blessings.</p>' +
+      '<div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between border-t border-white/10 pt-5">' +
+        '<p class="text-xs text-slate-500 max-w-md">General Moon-sign guidance for today. For predictions based on your own Kundli, book a personal consultation.</p>' +
+        '<a href="#booking" class="btn-gold rounded-full px-6 py-2.5 text-sm text-center">Get Personal Prediction</a>' +
+      '</div>';
+  }
+
+  /* ---------- Booking form ---------- */
+  function setErr(id, msg) {
+    var p = $('[data-err="' + id + '"]');
+    if (p) p.textContent = msg || "";
+    var f = $("#" + id);
+    if (f) f.classList.toggle("invalid", !!msg);
+  }
+  function fmtDate(v) { var p = v.split("-"); return p[2] + "-" + p[1] + "-" + p[0]; }
+  function fmt12(v) {
+    var p = v.split(":"), h = Number(p[0]), ap = h >= 12 ? "PM" : "AM";
+    return (h % 12 || 12) + ":" + p[1] + " " + ap;
+  }
+
+  function validateForm() {
+    var ok = true, first = null;
+    function bad(id, msg) { setErr(id, msg); if (ok) first = id; ok = false; }
+    ["f-name", "f-gender", "f-service", "f-dob", "f-tob", "f-place"].forEach(function (id) { setErr(id, ""); });
+
+    var name = $("#f-name").value.trim();
+    if (name.length < 2) bad("f-name", "Please enter your full name.");
+    else if (/[<>{}]/.test(name)) bad("f-name", "Name contains invalid characters.");
+    if (!$("#f-gender").value) bad("f-gender", "Please select gender.");
+    if (!$("#f-service").value) bad("f-service", "Please choose a consultation type.");
+
+    var dob = $("#f-dob").value;
+    if (!dob) bad("f-dob", "Please enter your date of birth.");
+    else {
+      var d = new Date(dob + "T00:00:00");
+      if (isNaN(d) || d > new Date() || dob < "1900-01-01") bad("f-dob", "Enter a valid date of birth.");
+    }
+    if (!$("#f-tob-unknown").checked && !$("#f-tob").value) bad("f-tob", "Enter birth time, or tick 'don't know'.");
+    if ($("#f-place").value.trim().length < 2) bad("f-place", "Please enter your birth city / state.");
+
+    if (!ok) { var el = $("#" + first); el.scrollIntoView({ behavior: "smooth", block: "center" }); try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); } }
+    return ok;
+  }
+
+  function buildMessage() {
+    var g = $("#f-gender").value.split("|");
+    var svcId = $("#f-service").value;
+    var svc = (DATA.services || []).filter(function (s) { return s.id === svcId; })[0];
+    var svcLine = svc ? svc.name + " (" + inr(svc.price) + " · " + svc.duration + ")" : "General Query / सामान्य परामर्श";
+    var tob = $("#f-tob-unknown").checked ? "Not known / ज्ञात नहीं" : fmt12($("#f-tob").value);
+    var q = $("#f-query").value.trim() || "—";
+    var line = "━━━━━━━━━━━━━━━";
+    return [
+      "🙏 *नमस्ते गुरुजी / Namaste Guruji*",
+      "",
+      "मैं परामर्श बुक करना चाहता/चाहती हूँ।",
+      "I would like to book a consultation.",
+      "",
+      line,
+      "🔯 *कुंडली विवरण / Kundli Details*",
+      "👤 नाम / Name: " + $("#f-name").value.trim(),
+      "⚧ लिंग / Gender: " + g[1] + " / " + g[0],
+      "📅 जन्म तिथि / DOB: " + fmtDate($("#f-dob").value),
+      "⏰ जन्म समय / Time of Birth: " + tob,
+      "📍 जन्म स्थान / Birth Place: " + $("#f-place").value.trim(),
+      line,
+      "🪔 *परामर्श / Service:* " + svcLine,
+      "❓ *प्रश्न / Query:* " + q,
+      line,
+      "कृपया उपलब्ध समय एवं शुल्क की जानकारी दें। धन्यवाद 🙏",
+      "Please share available slots & payment details. Thank you."
+    ].join("\n");
+  }
+
+  function initForm() {
+    var dob = $("#f-dob");
+    var t = new Date();
+    dob.max = t.getFullYear() + "-" + ("0" + (t.getMonth() + 1)).slice(-2) + "-" + ("0" + t.getDate()).slice(-2);
+
+    $("#f-tob-unknown").addEventListener("change", function () {
+      var tob = $("#f-tob");
+      tob.disabled = this.checked;
+      if (this.checked) { tob.value = ""; setErr("f-tob", ""); }
+    });
+    $$("#bookingForm .field").forEach(function (f) {
+      f.addEventListener("input", function () { setErr(f.id, ""); });
+      f.addEventListener("change", function () { setErr(f.id, ""); });
+    });
+
+    $("#bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!validateForm()) { toast("Please fix the highlighted fields.", "error"); return; }
+      if (!waNumber(DATA.guruji.whatsapp)) { toast("WhatsApp number is not configured.", "error"); return; }
+      var url = waLink(buildMessage());
+      var w = window.open(url, "_blank");
+      if (w) { try { w.opener = null; } catch (err) { /* ignore */ } }
+      else { window.location.href = url; }
+      toast("Opening WhatsApp with your details… 🙏", "success");
+    });
+
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-book]");
+      if (!b) return;
+      var id = b.getAttribute("data-book");
+      var sel = $("#f-service");
+      sel.value = id;
+      setErr("f-service", "");
+      var svc = (DATA.services || []).filter(function (s) { return s.id === id; })[0];
+      $("#booking").scrollIntoView({ behavior: "smooth", block: "start" });
+      toast((svc ? svc.name : "Service") + " selected. Fill your details below.", "info");
+      setTimeout(function () { try { $("#f-name").focus({ preventScroll: true }); } catch (err) { /* ignore */ } }, 700);
+    });
+  }
+
+  /* ---------- Nav ---------- */
+  function initNav() {
+    var btn = $("#menuBtn"), menu = $("#mobileMenu");
+    btn.addEventListener("click", function () {
+      var open = menu.classList.toggle("hidden") === false;
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    $$("a", menu).forEach(function (a) { a.addEventListener("click", function () { menu.classList.add("hidden"); btn.setAttribute("aria-expanded", "false"); }); });
+    document.addEventListener("click", function (e) {
+      if (!menu.classList.contains("hidden") && !e.target.closest("#nav")) menu.classList.add("hidden");
+    });
+  }
+
+  /* ---------- init ---------- */
+  function init() {
+    $("#year").textContent = new Date().getFullYear();
+    $("#todayDate").textContent = new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+    buildStars();
+    buildWheel();
+    buildZodiacGrid();
+    initForm();
+    initNav();
+    renderAll();
+
+    if (SiteStore.firebaseEnabled()) {
+      SiteStore.pull().then(function (d) { if (d) { DATA = d; renderAll(); } }).catch(function () { /* keep local data */ });
+    }
+    /* live update when admin saves in another tab of the same browser */
+    window.addEventListener("storage", function (e) {
+      if (e.key === SITE_CONFIG.settings.storageKey) { DATA = SiteStore.load(); renderAll(); }
+    });
+  }
+  init();
+})();
+</script>
+</body>
+</html>
